@@ -4,11 +4,28 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
+    <view class="flex text-red-500">
+      Demo Count: {{ countStore.count }}
+      <button @click="countStore.increment">新增</button>
+    </view>
+    <button class="i-carbon-sun dark:i-carbon-moon" />
+    <uni-icons type="contact" size="30"></uni-icons>
+    <uni-badge text="1"></uni-badge>
   </view>
 </template>
-
+<route lang="json5">
+{
+  layout: 'home',
+  style: {
+    navigationBarTitleText: '我是标题',
+  },
+}
+</route>
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useCountStore } from '@/store'
+
+const countStore = useCountStore()
 const title = ref('Hello')
 </script>
 
@@ -39,3 +56,4 @@ const title = ref('Hello')
   color: #8f8f94;
 }
 </style>
+import type { useCountStore } from '@/store/useCountStore'@/store/count/useCountStore
